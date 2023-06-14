@@ -1,7 +1,16 @@
-import React from 'react'
+import React from 'react';
+function Pricing () {
+  const handleClick = () => {
+    const data = 'some data';
+    window.location.href = `/page2?data=${data}`;
+  };
 
-function Pricing() {
-  return <h1>Pricing</h1>
+  return (
+    <div>
+      <button onClick={handleClick}>Go to Page 2</button>
+    </div>
+  );
 }
+
 
 export default Pricing
