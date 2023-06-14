@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 function Home() {
   const [inputValue, setInputValue] = useState('');
   const [inputAge, setInputAge] = useState('');
   const [inputGender, setInputGender] = useState('');
-  const [inputHobbie, setSelectedValue] = useState('');
+  const [inputHobbie, setSelectedValue] = useState([]);
+
 
   const handleChangeHobbies = (event) => {
-    setSelectedValue(event.target.value);
+    const value = event.target.value;
+    if (inputHobbie.includes(value)) {
+      setSelectedValue(inputHobbie.filter((v) => v !== value));
+    } else {
+      setSelectedValue([...inputHobbie, value]);
+    }
   };
+
+
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -55,7 +62,7 @@ function Home() {
     <p>Username: {inputValue}</p>
     <p>Age: {inputAge}</p>
     <p>Selected value: {inputGender}</p>
-    <p>Selected value: {inputHobbie}</p>
+    <p>Selected values: {inputHobbie.join(', ')}</p>
     </div>
    </div>
   );

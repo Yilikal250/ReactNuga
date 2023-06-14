@@ -2,7 +2,7 @@ import React from 'react';
 function Pricing () {
   const handleClick = () => {
     const data = 'some data';
-    window.location.href = `/page2?data=${data}`;
+    window.location.href = `/about?data=${data}`;
   };
 
   return (
