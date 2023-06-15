@@ -1,22 +1,13 @@
-import Navbar from "./Navbar";
-import About from "./pages/About";
-import Pricing from "./pages/Pricing";
-import Home from "./pages/Home";
-import {Route, Routes} from 'react-router-dom';
-
+import React from 'react'
+import AddTodo from './components/AddTodo'
+import Todoitem from './components/Todoitem'
 function App() {
   return (
-    <>
-    <Navbar />
-    <div className="container">
-<Routes>
-  <Route path="/" element={<Home />}/>
-  <Route path="/pricing" element={<Pricing />}/>
-  <Route path="/about" element={<About/>}/>
-
-</Routes>
+    <div>
+      <AddTodo/>
+      <Todoitem/>
     </div>
-    </>
-  )
+  );
 }
 export default App
+
